@@ -1,0 +1,68 @@
+body {
+    background: #393e46;
+    color: #eeeeee;
+    padding-top: 70px;
+}
+
+.logo {
+    position: relative;
+    bottom: 3px;
+}
+
+footer {
+    margin-top: 50px;
+    background: #212529;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.card {
+    margin: 10px auto;
+    background: #212529;
+}
+
+.info .card {
+    height: 90%;
+}
+
+.link {
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.footer small {
+    font-size: 12px;
+}
+
+#viber {
+    font-size: 25px;
+}
+
+#whatsapp {
+    font-size: 25px;
+}
+
+#mobile {
+    font-size: 25px;
+}
+
+@media (min-width: 770px) {
+    .card-text {
+        font-size: 25px;
+    }
+
+    .card-title {
+        font-weight: bold;
+        font-size: 30px;
+    }
+}
+
+.store-img {
+    width: 60%;
+}

@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="d-flex flex-row flex-wrap" data-aos="flip-left">
+        {% for el in products %}
+            <div class="card mt-3" style="width: 22rem; height: 25rem;">
+                <img class="card-img-top store-img img-fluid mt-3 m-auto" src="{{ el.img.url }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ el.title }}</h5>
+                    <small>{{ el.description }}</small>
+                    <div class="position-absolute" style="bottom: 5%">
+                        <strong>{{ el.price }} ₽ </strong>
+                        {% if el.sale == 'Да' %}
+                            <span class="badge rounded-pill bg-danger fa-1x">Скидка</span>
+                        {% endif %}
+                        <a href="{% url 'about' %}" class="btn btn-primary mx-3">Купить</a>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

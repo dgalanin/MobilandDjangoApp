@@ -1,0 +1,1 @@
+web: gunicorn MobilandWebStore.wsgi --log-file -

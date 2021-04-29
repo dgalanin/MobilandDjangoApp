@@ -1,0 +1,125 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    {#  SEO   #}
+    {% block seo %}
+    {% endblock %}
+
+    <link rel="shortcut icon" href="{% static 'main/img/logo.svg' %}" type="image/png">
+
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/fontawesome/css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/aos.css' %}">
+
+    <title>MOBILAND Ремонт телефонов в Дзержинске</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-sm-5 fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">MOBILAND <img class="logo"
+                                                                          src="{% static 'main/img/logo.svg' %}"
+                                                                          alt=""
+                                                                          width="30"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% url 'home' %}" href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% url 'repair' %}" href="{% url 'repair' %}">Ремонт</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% url 'store' %}" href="{% url 'store' %}">Магазин</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% url 'about' %}" href="{% url 'about' %}">Как нас найти</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-none d-md-flex">Ежедневно с 9:00 до 19:00</div>
+        </div>
+        <div class="row d-block d-md-none mx-auto">
+            Ежедневно с 9:00 до 19:00
+        </div>
+    </nav>
+</header>
+
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer class="footer mt-sm-5">
+    <div class="container pt-2 pt-sm-3">
+        <div class="row">
+            <div class="col-7 col-sm-5">
+                <h5>Наш адрес</h5>
+                <address>
+                    город Дзержинск <br>
+                    проспект Чкалова 22, Бристоль<br>
+                    <h5><a class="link" href="{% url 'about' %}">Как нас найти</a></h5>
+                </address>
+            </div>
+            <div class="col-5 col-sm-3">
+                <h5>Контакты</h5>
+
+                &nbsp<a href="tel:+79519046066"><i id="mobile" class="fas fa-mobile-alt"></i>
+                <text class="link">8 951 904 60 66</text>
+            </a><br>
+                <a href="viber://chat?number=+79519046066"><i id="viber" class="fab fa-2x fa-viber"></i>
+                    <text class="link">Viber</text>
+                </a> <br>
+                <a href="https://api.whatsapp.com/send?phone=89519046066"><i id="whatsapp"
+                                                                             class="fab fa-2x fa-whatsapp"></i>
+                    <text class="link">WhatsApp</text>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-3 m-0-auto">
+                <h5>Мы в соц. сетях</h5>
+                <a class="link" href="http://instagram.com/mobiland_52/"><i class="fab fa-2x fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <p class="text-center"><strong>© 2021 Mobiland</strong> <br> <small>Сайт исключительно информационный и ни
+                при каких условиях не является публичной офертой, согласно Статьи
+                437 (2) ГК РФ.</small></p>
+        </div>
+    </div>
+</footer>
+
+{# jQuery + Bootstrap #}
+<script src="{% static 'main/js/jquery-3.5.1.js' %}"></script>
+<script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+
+{# AOS Lib #}
+<script src="{% static 'main/js/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+
+{# Nav script#}
+<script>
+    const navActive = document.getElementsByClassName(window.location.pathname)[0];
+    navActive.classList.toggle("active");
+</script>
+
+</body>
+</html>
