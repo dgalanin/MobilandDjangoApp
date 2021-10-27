@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'mobiland-web-store.herokuapp.com', 'mobiland52.ru', 'www.mobiland52.ru']
+ALLOWED_HOSTS = ['127.0.0.1', 'mobiland-web-store.herokuapp.com', 'mobiland52.ru', 'www.mobiland52.ru', 'tech.mobiland52.ru']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
